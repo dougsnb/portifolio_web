@@ -1,0 +1,594 @@
+/* fontes */
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,574&display=swap');
+
+:root{
+    --main-color: #212121;
+    --text-color: #ffffff;
+    --bg-color-01: #1a1919;
+    --bg-color-02: #02687a;
+    --color-00: #0000001a;
+
+    /* cores extras */
+
+    --color-01: #780ccf;
+    --color-02: #021168;
+    --color-03: #1e3197;
+    --color-04: #09155c;
+    --color-05: #56565c;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+}
+
+html{
+      font-family: "Inter", system-ui;
+      font-size: 16px;
+}
+
+body{
+    background-color: var(--bg-color-01);
+    color: var(--text-color);  
+}
+
+header{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    padding: 1.1rem;
+    background-color: var(--bg-color-01);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+
+}
+
+.logo{
+    font-size: 1.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+    cursor: default;
+}
+
+.nav a {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    transition: 0.4s;
+
+}
+
+.nav a:hover{
+    color: var(--main-color);
+}
+
+section {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    flex-direction: column; /* Empilha os elementos verticalmente */
+    min-height: 100vh; /* O container ocupará a altura total da tela */
+    padding: 2rem; /* Espaçamento interno */
+}
+
+img {
+    max-width: 100%;
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+span{
+    color: var(--color-01); 
+}
+
+.home, .sobre{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.home-img{
+    border-bottom: solid 0.8rem;
+    border-right: solid 0.8rem;
+    border-image: linear-gradient(135deg, transparent 60%, var(--color-05) )1;
+}
+
+.sobre-img{
+    border-bottom: solid 0.8rem;
+    border-left: solid 0.8rem;
+    border-image: linear-gradient(235deg, transparent 60%, var(--color-05) )1;
+}
+
+.home-img img, .sobre-img img{
+    width: 100%;
+}
+
+.servicos, .contato{
+    background-color: var(--main-color) ;
+}
+
+.home-conteudo, .sobre-conteudo{
+    width: 50%;
+    margin-right: 20;
+}
+
+.home-conteudo h1, .sobre-conteudo h1{
+    font-weight: 700;
+    line-height: 1.3;
+    font-size: 2.7rem;
+    
+}
+.home-conteudo h3, .sobre-conteudo h3{
+    font-weight: 700;
+    font-size: 1.6rem;    
+}
+
+.home-conteudo p, .sobre-conteudo p{
+    margin-top: 1.3rem;
+    text-align: justify;
+}
+
+.servicos h2,
+.contato h2{
+    font-size: 2.5rem;
+    margin-top: 1rem;
+    text-align: center;
+    /* margin: 1rem; */
+}
+
+.portifolio h2{
+    margin: 3rem;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.servicos-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.caixa-container{
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+min-width: 25rem;
+margin-bottom: 1rem;
+}
+
+.servicos-container, .caixa-container{
+    padding: 2rem 1rem 2.5rem;
+    border-radius: 2.3rem;
+    text-align: center;
+    border: solid 0.25rem var(--color-01);
+    background-color: var(--main-color) ;
+    transition: 0.5s ease;
+    margin: 1.5rem;
+    align-items: center;
+}
+
+.servicos-container, .caixa-container:hover{
+    border-color: var(--main-color);
+    transform: scale(1.01);
+}
+
+.caixa-container i{
+    font-size: 4.3rem;
+    color: var(--color-01);
+}
+
+.caixa-container h3{
+    font-size: 1.5rem;
+}
+
+.caixa-container p{
+    margin: 0.5rem;
+    letter-spacing: 0.1rem;
+    /* numero linhas */
+    /* display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis; */
+}
+
+/* botões */
+.botão{
+    display: inline-block;
+    padding: 0.7rem 1.8rem;
+    background-color: #780ccf;
+    border-radius: 2rem;
+    color: var(--main-color);
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    transition: 0.3s ease;
+    margin-top: 1.2rem;
+}
+
+.botão:hover{
+    box-shadow: 0 0 0.3rem var(--color-01);
+    background-color: inherit;
+    color: var(--color-01);
+    cursor: pointer;
+}
+/* botões */
+
+.portifolio-container {
+    display: grid;
+    gap: 1.4rem; /* Espaçamento entre os itens do grid */
+    width: 80%; /* Ajuste a largura conforme necessário */
+    margin: 0 auto; /* Centraliza o contêiner horizontalmente */
+    grid-template-columns: repeat(2, minmax(500px, auto)); /* Define duas colunas com largura mínima */
+    justify-content: center; /* Centraliza o conteúdo dentro do grid */
+}
+
+.caixa-portifolio {
+    position: relative;
+    border-radius: 0.6rem;
+    box-shadow: 0 0 0.6rem var(--color-05);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; /* Alinha conteúdo verticalmente */
+    align-items: center; /* Centraliza horizontalmente os filhos */
+}
+
+.caixa-portifolio img {
+    width: 100%; /* Imagem ocupa toda a largura da caixa */
+    transition: 0.5s ease; /* Transição suave para efeitos */
+}
+
+.caixa-portifolio img:hover {
+    transform: scale(1.1); /* Aumenta a imagem ao passar o mouse */
+}
+
+.caixa-portifolio .portifolio-layer {
+    position: absolute; /* Permite sobrepor à imagem */
+    bottom: 0; /* Posiciona no fundo da caixa */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent, #780ccf); /* Gradiente de fundo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    text-align: center; /* Centraliza texto */
+    padding: 0 4rem;
+    transform: translateY(30rem);
+    transition: 0.5s ease;
+}
+
+.caixa-portifolio:hover .portifolio-layer {
+    transform: translateY(0);
+}
+
+.portifolio-layer h4 {
+        font-size: 1.8rem; /* Tamanho da fonte do título */
+        margin: 0.5rem 0; /* Espaçamento superior e inferior */
+        display: -webkit-box; /* Necessário para aplicar o clamp */
+        -webkit-box-orient: vertical; /* Define a orientação do box */
+        overflow: hidden; /* Oculte o texto que excede */
+        -webkit-line-clamp: 2; /* Limite o título a 2 linhas */
+        letter-spacing: 0.1rem; /* Espaçamento entre as letras */
+    }
+    
+
+    .portifolio-layer p {
+        margin: 0.5rem 0; /* Margem superior e inferior */
+        padding: 0 1rem; /* Espaçamento nas laterais */
+        line-height: 1.5; /* Espaçamento entre linhas */
+        max-height: 12rem; /* Defina uma altura máxima para 8 linhas, ajuste conforme necessário */
+        overflow: hidden; /* Oculte o texto que excede */
+        text-overflow: ellipsis; /* Adicione reticências se o texto for muito longo */
+        display: -webkit-box; /* Necessário para aplicar o clamp */
+        -webkit-box-orient: vertical; /* Define a orientação do box */
+        -webkit-line-clamp: 6; /* Limita o texto a 8 linhas */
+    }
+    
+.portifolio-layer a i {
+    font-size: 1.2rem;
+    color: var(--bg-color-01);
+}
+
+.portifolio-layer a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    background: var(--text-color);
+    border-radius: 50%;
+}
+
+
+form .caixa-input{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+form .caixa-input input, form textarea{
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    color: var(--text-color);
+    background-color: var(--bg-color-01);
+    border-radius: 0.8rem;
+    margin: 0.4rem 0;
+}
+
+form textarea{
+    resize: none;
+}
+
+.redes-sociais img{
+    width: 3.5rem;
+}
+
+.redes-sociais a{
+    display: inline flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: transparent;
+    border: solid 0.15rem var(--color-01);
+    border-radius: 50%;
+    font-size: 2rem;
+    margin: 1.8rem 1rem 1.8rem 0;
+    transition: 0.5s ease;
+    color: var(--text-color);
+}
+
+.redes-sociais a:hover{
+    background-color: #780ccf;
+    color: var(--bg-color-01);
+    box-shadow: 0 0 0.3rem var(--color-01);
+}
+
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1.2rem;
+    background-color: var(--main-color);
+}
+
+/* Estilos responsivos para a página inicial */
+@media (max-width: 768px) {
+    .home, .sobre {
+        flex-direction: column; /* Muda a direção do flex para coluna */
+        align-items: center; /* Centraliza os itens */
+    }
+
+    .home-conteudo, .sobre-conteudo {
+        width: 90%; /* Ajusta a largura para 90% */
+        margin-right: 0; /* Remove a margem direita */
+        margin-bottom: 2rem; /* Adiciona um espaço abaixo */
+        padding-top: 80px; /* Adiciona espaço acima do conteúdo */
+    }
+
+    .home-conteudo h1, .sobre-conteudo h1 {
+        font-size: 2.2rem; /* Diminui o tamanho da fonte */
+    }
+
+    .home-conteudo h3, .sobre-conteúdo h3 {
+        font-size: 1.4rem; /* Diminui o tamanho da fonte */
+    }
+
+    .caixa-container {
+        min-width: auto; /* Remove a largura mínima */
+        width: 100%; /* Faz a caixa ocupar 100% da largura */
+        margin: 0.5rem; /* Ajusta a margem */
+    }
+
+    .botão {
+        width: 100%; /* Faz os botões ocuparem 100% da largura */
+        text-align: center; /* Centraliza o texto do botão */
+    }
+
+    .redes-sociais {
+        display: flex; /* Usar flexbox para centralizar */
+        justify-content: center; /* Centraliza horizontalmente */
+        margin-top: 2rem; /* Espaço superior para afastar de outros elementos */
+    }
+    
+    .redes-sociais a {
+        margin: 0 1rem; /* Espaçamento entre os ícones */
+        font-size: 2rem; /* Ajuste o tamanho do ícone conforme necessário */
+    }
+    
+}
+/* Estilos responsivos para a página inicial */
+
+/* Estilos responsivos para a página serviços */
+
+@media (max-width: 768px) {
+    .servicos-container {
+        flex-direction: column; /* Coloca os itens em coluna */
+        align-items: center; /* Centraliza os itens */
+    }
+
+    .caixa-container {
+        width: 90%; /* Ajusta a largura para 90% em telas menores */
+        margin-bottom: 1.5rem; /* Espaço entre os containers reduzido */
+    }
+
+    .servicos {
+        padding: 6rem 0 2rem; /* Espaço superior maior para afastar do cabeçalho */
+    }
+    
+}
+
+/* Estilos responsivos para a página serviços */
+
+
+/* Estilos responsivos para a página pagina portifolio */
+
+@media (max-width: 768px) {
+    .portifolio-container {
+        display: flex; /* Certifica-se de que o container está usando flexbox */
+        flex-direction: column; /* Coloca os itens em coluna */
+        align-items: center; /* Centraliza os itens */
+        padding: 4rem 0; /* Adiciona um espaço superior menor para afastar do cabeçalho */
+    }
+
+    .projeto {
+        width: 90%; /* Ajusta a largura para 90% em telas menores */
+        margin-bottom: 1rem; /* Espaço entre os containers reduzido */
+        text-align: center; /* Centraliza o texto dentro de cada projeto */
+    }
+
+    .portifolio h4 {
+        text-align: center; /* Centraliza o título "Nossos Projetos" */
+        margin: 0; /* Remove a margem padrão para ajustar o espaço */
+        padding-bottom: 1rem; /* Espaço entre o título e o container */
+        font-size: 0.85rem;
+    }
+
+    .portifolio p{
+        text-align: center; /* Centraliza o título "Nossos Projetos" */
+        margin: 0; /* Remove a margem padrão para ajustar o espaço */
+        padding-bottom: 1rem; /* Espaço entre o título e o container */
+        font-size: 0.6rem;
+    }
+}
+
+/* Estilos responsivos para a página pagina portifolio */
+
+/* Estilos responsivos para a página pagina contato */
+
+@media (max-width: 768px) {
+    .contato-container {
+        display: flex; /* Mantém o display flex */
+        flex-direction: column; /* Coloca os itens em coluna */
+        align-items: center; /* Centraliza os itens */
+        margin: 0 1rem; /* Margem lateral para evitar que os itens encostem na borda */
+    }
+
+    .form-container {
+        width: 100%; /* Ajusta a largura do formulário para 100% */
+        max-width: 500px; /* Define uma largura máxima para o formulário */
+        margin: 2rem auto; /* Centraliza com margem superior e inferior */
+        padding: 1.5rem; /* Adiciona padding interno para dar espaço aos elementos */
+        border: 1px solid #ccc; /* Adiciona uma borda (opcional) */
+        border-radius: 5px; /* Borda arredondada (opcional) */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil (opcional) */
+    }
+
+    h2 {
+        font-size: 2rem; /* Tamanho do título ajustado */
+        margin-bottom: 1rem; /* Espaço inferior reduzido */
+        text-align: center; /* Centraliza o título */
+    }
+
+    input, textarea {
+        width: 100%; /* Faz com que os inputs ocupem 100% da largura */
+        margin-bottom: 1rem; /* Espaço entre os inputs */
+        padding: 0.5rem; /* Adiciona padding interno para os inputs */
+        border: 1px solid #ccc; /* Adiciona borda aos inputs */
+        border-radius: 5px; /* Arredondar os cantos dos inputs */
+    }
+
+    .botão {
+        width: 100%; /* Botão ocupa 100% da largura */
+        padding: 1rem; /* Aumenta o padding do botão */
+        font-size: 1rem; /* Ajusta o tamanho da fonte do botão */
+        background-color: #800080; /* Cor roxa para o botão */
+        color: white; /* Cor do texto do botão */
+        border: none; /* Remove a borda padrão */
+        border-radius: 5px; /* Borda arredondada no botão */
+        cursor: pointer; /* Muda o cursor ao passar sobre o botão */
+    }
+
+    .botão:hover {
+        background-color: #6a006a; /* Cor do botão ao passar o mouse (opcional) */
+    }
+}
+
+/* Estilos responsivos para a página pagina contato */
+
+/* Estilos responsivos para a página pagina sobre */
+
+@media (max-width: 768px) {
+    .sobre {
+        text-align: LEFT; /* Centraliza o texto */
+    }
+
+    .minha-foto {
+        display: block; /* Garante que a imagem seja um bloco */
+        margin: 1rem auto; /* Adiciona margem em cima e embaixo e centraliza */
+    }
+
+    .sobre-img {
+        border-bottom: solid 0.8rem;
+        border-left: solid 0.8rem;
+        border-image: linear-gradient(235deg, transparent 60%, var(--color-05)) 1;
+        /* Outras propriedades, se necessário */
+    }
+}
+
+/* Estilos responsivos para a página pagina sobre */
+
+/* Menu Hamburger */
+
+@media (max-width: 768px) {
+    .menu-hamburguer{
+        cursor: pointer;
+    }
+    
+    .menu-hamburguer div{
+        width: 32px;
+        height: 2px;
+        background-color: var(--color-01);
+        margin: 8px;
+    }
+    
+
+    .nav {
+        position: absolute;
+        top: 8vh;
+        right: 0;
+        width: 50vw;
+        height: 92vh;
+        background: var(--bg-color-01);
+        display: flex; /* Garante que a nav use flexbox */
+        flex-direction: column; /* Alinha os itens em coluna */
+        align-items: center; /* Centraliza os itens horizontalmente */
+        justify-content: flex-start; /* Alinha os itens no início da coluna */
+        transform: translateX(100%); /* Inicialmente escondido */
+        transition: transform 0.3s ease; /* Animação ao abrir/fechar */
+    }
+
+    .nav.active {
+        transform: translateX(0); /* Menu visível */
+    }
+
+    .nav a {
+        margin: 1rem 0; /* Adiciona espaçamento vertical entre os links */
+        opacity: 0; /* Inicialmente invisível */
+        transition: opacity 0.3s ease; /* Animação de opacidade */
+        font-size: 1.5rem; /* Ajuste o tamanho da fonte se necessário */
+    }
+
+    .nav.active a {
+        opacity: 1; /* Opacidade visível ao ativar o menu */
+    }
+
+    .menu-hamburguer {
+        display: block; /* Mostra o menu hamburger */
+    }
+}
+
+/* Menu Hamburger */
+
